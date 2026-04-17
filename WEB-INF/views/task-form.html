@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/task/save}" th:object="${taskItem}" method="post">
+    <label>Title</label>
+    <input type="text" th:field="*{title}">
+
+    <label>Deadline</label>
+    <input type="date" th:field="*{deadline}">
+
+    <label >Priority</label>
+    <select th:field="*{priority}">
+        <option value="HIGH">High</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="LOW">Low</option>
+    </select>
+    <button type="submit">lưu</button>
+</form>
+</body>
+</html>
