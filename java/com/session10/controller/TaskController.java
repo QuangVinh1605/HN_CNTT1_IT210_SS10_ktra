@@ -39,7 +39,7 @@ public class TaskController {
         if(bindingResult.hasErrors()){
             return "task-form";
         }
-        taskItem.setId(UUID.randomUUID().toString());
+        taskItem.setId(String.valueOf(tasks.size() + 1));
         tasks.add(taskItem);
         return "redirect:/task";
     }
